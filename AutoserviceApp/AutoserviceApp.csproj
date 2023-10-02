@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B82A0D58-0956-4462-BCED-B3E18036E3C3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AutoserviceApp</RootNamespace>
+    <AssemblyName>AutoserviceApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Autoservice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Autoservice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client.cs">
+      <DependentUpon>Autoservice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAddEdit.xaml.cs">
+      <DependentUpon>ClientAddEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClientService.cs">
+      <DependentUpon>Autoservice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentByService.cs">
+      <DependentUpon>Autoservice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FilterService.cs" />
+    <Compile Include="Gender.cs">
+      <DependentUpon>Autoservice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Manufacturer.cs">
+      <DependentUpon>Autoservice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pages\AdminPanel.xaml.cs">
+      <DependentUpon>AdminPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>Autoservice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPhoto.cs">
+      <DependentUpon>Autoservice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSale.cs">
+      <DependentUpon>Autoservice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Service.cs">
+      <DependentUpon>Autoservice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServicePhoto.cs">
+      <DependentUpon>Autoservice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SortService.cs" />
+    <Compile Include="Tag.cs">
+      <DependentUpon>Autoservice.tt</DependentUpon>
+    </Compile>
+    <Page Include="ClientAddEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Autoservice.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Autoservice.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Autoservice.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Autoservice.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="pages\AdminPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Autoservice.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Autoservice.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Autoservice.edmx.diagram">
+      <DependentUpon>Autoservice.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Autoservice.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Autoservice.edmx</DependentUpon>
+      <LastGenOutput>Autoservice.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Autoservice.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Autoservice.edmx</DependentUpon>
+      <LastGenOutput>Autoservice.cs</LastGenOutput>
+    </Content>
+    <Resource Include="Avatars\1.jpg" />
+    <Resource Include="Avatars\10.jpg" />
+    <Resource Include="Avatars\11.jpg" />
+    <Resource Include="Avatars\12.jpg" />
+    <Resource Include="Avatars\13.jpg" />
+    <Resource Include="Avatars\14.jpg" />
+    <Resource Include="Avatars\15.jpg" />
+    <Resource Include="Avatars\16.jpg" />
+    <Resource Include="Avatars\17.jpg" />
+    <Resource Include="Avatars\18.jpg" />
+    <Resource Include="Avatars\19.jpg" />
+    <Resource Include="Avatars\2.jpg" />
+    <Resource Include="Avatars\20.jpg" />
+    <Resource Include="Avatars\21.jpg" />
+    <Resource Include="Avatars\22.jpg" />
+    <Resource Include="Avatars\23.jpg" />
+    <Resource Include="Avatars\24.jpg" />
+    <Resource Include="Avatars\25.jpg" />
+    <Resource Include="Avatars\26.jpg" />
+    <Resource Include="Avatars\27.jpg" />
+    <Resource Include="Avatars\28.jpg" />
+    <Resource Include="Avatars\29.jpg" />
+    <Resource Include="Avatars\3.jpg" />
+    <Resource Include="Avatars\30.jpg" />
+    <Resource Include="Avatars\31.jpg" />
+    <Resource Include="Avatars\32.jpg" />
+    <Resource Include="Avatars\33.jpg" />
+    <Resource Include="Avatars\34.jpg" />
+    <Resource Include="Avatars\35.jpg" />
+    <Resource Include="Avatars\36.jpg" />
+    <Resource Include="Avatars\37.jpg" />
+    <Resource Include="Avatars\38.jpg" />
+    <Resource Include="Avatars\39.jpg" />
+    <Resource Include="Avatars\4.jpg" />
+    <Resource Include="Avatars\40.jpg" />
+    <Resource Include="Avatars\41.jpg" />
+    <Resource Include="Avatars\42.jpg" />
+    <Resource Include="Avatars\43.jpg" />
+    <Resource Include="Avatars\44.jpg" />
+    <Resource Include="Avatars\47.jpg" />
+    <Resource Include="Avatars\48.jpg" />
+    <Resource Include="Avatars\5.jpg" />
+    <Resource Include="Avatars\6.jpg" />
+    <Resource Include="Avatars\7.jpg" />
+    <Resource Include="Avatars\8.jpg" />
+    <Resource Include="Avatars\9.jpg" />
+    <Resource Include="Avatars\m1.jpg" />
+    <Resource Include="Avatars\m10.jpg" />
+    <Resource Include="Avatars\m11.jpg" />
+    <Resource Include="Avatars\m12.jpg" />
+    <Resource Include="Avatars\m13.jpg" />
+    <Resource Include="Avatars\m14.jpg" />
+    <Resource Include="Avatars\m15.jpg" />
+    <Resource Include="Avatars\m16.jpg" />
+    <Resource Include="Avatars\m17.jpg" />
+    <Resource Include="Avatars\m18.jpg" />
+    <Resource Include="Avatars\m19.jpg" />
+    <Resource Include="Avatars\m2.jpg" />
+    <Resource Include="Avatars\m20.jpg" />
+    <Resource Include="Avatars\m21.jpg" />
+    <Resource Include="Avatars\m22.jpg" />
+    <Resource Include="Avatars\m23.jpg" />
+    <Resource Include="Avatars\m24.jpg" />
+    <Resource Include="Avatars\m25.jpg" />
+    <Resource Include="Avatars\m26.jpg" />
+    <Resource Include="Avatars\m27.jpg" />
+    <Resource Include="Avatars\m28.jpg" />
+    <Resource Include="Avatars\m29.jpg" />
+    <Resource Include="Avatars\m3.jpg" />
+    <Resource Include="Avatars\m30.jpg" />
+    <Resource Include="Avatars\m31.jpg" />
+    <Resource Include="Avatars\m32.jpg" />
+    <Resource Include="Avatars\m33.jpg" />
+    <Resource Include="Avatars\m34.jpg" />
+    <Resource Include="Avatars\m35.jpg" />
+    <Resource Include="Avatars\m36.jpg" />
+    <Resource Include="Avatars\m37.jpg" />
+    <Resource Include="Avatars\m38.jpg" />
+    <Resource Include="Avatars\m39.jpg" />
+    <Resource Include="Avatars\m4.jpg" />
+    <Resource Include="Avatars\m40.jpg" />
+    <Resource Include="Avatars\m41.jpg" />
+    <Resource Include="Avatars\m42.jpg" />
+    <Resource Include="Avatars\m43.jpg" />
+    <Resource Include="Avatars\m44.jpg" />
+    <Resource Include="Avatars\m45.jpg" />
+    <Resource Include="Avatars\m46.jpg" />
+    <Resource Include="Avatars\m47.jpg" />
+    <Resource Include="Avatars\m48.jpg" />
+    <Resource Include="Avatars\m49.jpg" />
+    <Resource Include="Avatars\m5.jpg" />
+    <Resource Include="Avatars\m50.jpg" />
+    <Resource Include="Avatars\m6.jpg" />
+    <Resource Include="Avatars\m7.jpg" />
+    <Resource Include="Avatars\m8.jpg" />
+    <Resource Include="Avatars\m9.jpg" />
+    <Resource Include="Avatars\m96.jpg" />
+    <Resource Include="Avatars\m97.jpg" />
+    <Resource Include="Avatars\m98.jpg" />
+    <Resource Include="Avatars\m99.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
